@@ -1,0 +1,23 @@
+                        <div class="text-center">
+   <img class="img-thumbnail" src="{{onlyQRCode(@$deposit_wallet->wallet_address)}}">
+   <p class="d-block text-white mt-3">Kindly Deposit MKT BEP20 Tokens.</p>
+</div>
+
+
+function cryptoQR($wallet, $amount, $crypto = null)
+{
+    $varb = $wallet . "&amount=" . $amount;
+    return "https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=$varb&choe=UTF-8";
+}
+
+function OnlycryptoQR($wallet = null)
+{
+    $varb = $wallet;
+    return "https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=$varb&choe=UTF-8";
+}
+
+
+function onlyQRCode($wallet)
+{
+    return "https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=$wallet&choe=UTF-8";
+}
